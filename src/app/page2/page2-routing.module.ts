@@ -3,6 +3,10 @@ import { PageAComponent } from './page-a/page-a.component';
 
 export const page2Routes: Routes = [
   {
+    path: '',
+    redirectTo: 'page-a'
+  },
+  {
     path: 'page-b',
     loadChildren: './page-b/page-b.module#PageBModule'
   },
