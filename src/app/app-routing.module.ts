@@ -5,30 +5,39 @@ import { PrivateLayoutComponent} from './shared/layout/app-layout/private-layout
 import { PublicLayoutComponent} from './shared/layout/app-layout/public-layout.component';
 
 const routes: Routes = [
-  { path: '', component: PrivateLayoutComponent },
-  { path: 'login', component: PublicLayoutComponent }
 
-  // {
-  //   path: '',
-  //   component: PrivateLayoutComponent,
-  //   children: [
-  //     {
-  //       path: '', redirectTo: 'home', pathMatch: 'full',
-  //     },
-  //     {
-  //       path: 'home',
-  //       loadChildren: 'app/dashboard/dashboard.module#DashboardModule',
-  //       data: {
-  //         pageTitle: 'Home'
-  //       },
-  //     },
-  //   ]
-  // }
+  {
+    path: '',
+    component: PrivateLayoutComponent,
+    children: [
+      {
+        path: '', redirectTo: 'dashboard', pathMatch: 'full',
+      },
+      {
+        path: 'dashboard',
+        loadChildren: 'app/dashboard/dashboard.module#DashboardModule',
+        data: {
+          pageTitle: 'Home'
+        },
+      },
+      {
+        path: 'page1',
+        loadChildren: 'app/page1/page1.module#Page1Module',
+        data: {
+          pageTitle: 'Page 2'
+        },
+      },
+      {
+        path: 'page2',
+        loadChildren: 'app/page2/page2.module#Page2Module',
+        data: {
+          pageTitle: 'Page 2'
+        },
+      }
+    ]
+  },
+  { path: 'login', component: PublicLayoutComponent }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {useHash: true});
-// @NgModule({
-//   imports: [RouterModule.forRoot(routes)],
-//   exports: [RouterModule]
-// })
-// export class AppRoutingModule { }
+
