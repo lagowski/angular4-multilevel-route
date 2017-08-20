@@ -2,4 +2,5 @@
 .outer-outlet {
   border-style: dotted;
   border-width: 1px;
+  padding: 10px;
 }

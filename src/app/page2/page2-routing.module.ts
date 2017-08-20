@@ -1,15 +1,16 @@
 import { Routes, RouterModule } from '@angular/router';
-import { Page2Component } from './page2.component';
-import { ModuleWithProviders } from '@angular/core';
+import { PageAComponent } from './page-a/page-a.component';
 
 export const page2Routes: Routes = [
   {
-    path: '',
-    component: Page2Component,
-    data: {
-      pageTitle: 'Page 2'
-    }
+    path: 'page-b',
+    loadChildren: './page-b/page-b.module#PageBModule'
+  },
+  {
+    path: 'page-a',
+    component: PageAComponent,
   }
+
 ];
 
-export const page2Routing: ModuleWithProviders = RouterModule.forChild(page2Routes);
+export const page2Routing = RouterModule.forChild(page2Routes);

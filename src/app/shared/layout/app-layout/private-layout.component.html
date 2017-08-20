@@ -5,16 +5,22 @@
     <title>PRIVATE</title>
 </head>
 <body>
-
-<h1>PRIVATE DASHBOARD</h1>
-<a [routerLink]="['/login']">Login</a>
-<a [routerLink]="['/']">Dashboard</a>
-<a [routerLink]="['/page1']">Page 1</a>
-<a [routerLink]="['/page2']">Page 2</a>
-<hr>
-<h2>SUBPAGE</h2>
 <div class="outer-outlet">
-  <router-outlet></router-outlet>
+  <h1>PRIVATE DASHBOARD</h1>
+  This is private part of web. Common HTML for all subpages<br><br>
+  <a [routerLink]="['/login']">Login</a> |
+  <a [routerLink]="['/']">Dashboard</a> |
+  <a [routerLink]="['/page1']">Page 1</a> |
+  <a [routerLink]="['/page2']">Page 2</a> |
+  <a [routerLink]="['/page2/page-a']">Page 2 / Page A</a> |
+  <a [routerLink]="['/page2/page-b']">Page 2 / Page B (list) </a> |
+  <a [routerLink]="['/page2/page-b/edit/3']">Page 2 / Page B (details) </a>
+  <hr>
+  <h2>SUBPAGE</h2>
+  This DIV contain a HTML of subpage called by router-outlet
+  <div class="outer-outlet">
+    <router-outlet></router-outlet>
+  </div>
 </div>
 </body>
 </html>
