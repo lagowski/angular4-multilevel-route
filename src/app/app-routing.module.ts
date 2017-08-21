@@ -36,7 +36,7 @@ const routes: Routes = [
       }
     ]
   },
-  { path: 'login', component: PublicLayoutComponent }
+  { path: 'sign', component: PublicLayoutComponent, loadChildren: 'app/sign/sign.module#SignModule' }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {useHash: true});
